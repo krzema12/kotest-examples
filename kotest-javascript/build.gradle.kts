@@ -12,7 +12,8 @@ repositories {
 }
 
 kotlin {
-   js(IR) {
+   js {
+      browser()
       nodejs()
    }
    compilerOptions {
