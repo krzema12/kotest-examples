@@ -5,7 +5,7 @@ import io.ktor.client.statement.*
 
 private val client = HttpClient(Js)
 
-suspend fun fetch(): Dog {
+suspend fun fetchDogUsingHttpClient(): Dog {
    val resp = client.get("https://dog.ceo/api/breeds/image/random")
    var message = ""
    var status = ""

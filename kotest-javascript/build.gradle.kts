@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
    alias(libs.plugins.kotest.multiplatform)
@@ -13,30 +15,21 @@ kotlin {
    js(IR) {
       nodejs()
    }
+   compilerOptions {
+      apiVersion = KotlinVersion.KOTLIN_2_1
+      languageVersion = KotlinVersion.KOTLIN_2_1
+   }
    sourceSets {
-      val jsMain by getting {
+      jsMain {
          dependencies {
             implementation(libs.ktor.client.js)
          }
       }
-      val jsTest by getting {
+      jsTest {
          dependencies {
             implementation(libs.kotest.assertions.core)
             implementation(libs.kotest.framework.engine)
          }
       }
-   }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
-   kotlinOptions {
-      freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.RequiresOptIn"
-   }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-   kotlinOptions {
-      apiVersion = "1.9"
-      verbose = true
    }
 }
