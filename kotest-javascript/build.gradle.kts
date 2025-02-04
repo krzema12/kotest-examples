@@ -23,6 +23,8 @@ kotlin {
       jsMain {
          dependencies {
             implementation(libs.ktor.client.js)
+            // needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
+            implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.1.10")
          }
       }
       jsTest {
