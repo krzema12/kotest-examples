@@ -1,0 +1,14 @@
+[versions]
+kotlin = "2.0.0"
+kotest = "5.10.0-LOCAL"
+ktor = "2.3.4"
+
+[libraries]
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
+
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
