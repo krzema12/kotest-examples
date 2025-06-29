@@ -1,3 +1,5 @@
+package io.kotest.examples.native
+
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.assertions.throwables.shouldThrowAny
 import io.kotest.core.spec.style.ShouldSpec

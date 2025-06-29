@@ -1,7 +1,7 @@
-import io.ktor.client.*
-import io.ktor.client.engine.js.*
-import io.ktor.client.request.*
-import io.ktor.client.statement.*
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.js.Js
+import io.ktor.client.request.get
+import io.ktor.client.statement.bodyAsText
 
 private val client = HttpClient(Js)
 

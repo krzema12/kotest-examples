@@ -1,3 +1,5 @@
+package io.kotest.examples.native
+
 private val socialRegex = "^\\d{3}-\\d{2}-\\d{4}$".toRegex()
 
 fun validateSocial(ssn: String): Boolean {

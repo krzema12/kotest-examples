@@ -19,7 +19,6 @@ out/
 
 build
 target
-.idea
 .gradle
 
 allure-results/
@@ -39,3 +38,4 @@ local.properties
 
 kotest-tests/kotest-tests-js/node_modules/
 .DS_Store
+.kotlin

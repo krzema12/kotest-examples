@@ -1,3 +1,5 @@
+package io.kotest.examples.native
+
 fun bitstring(bits: List<Boolean>): String {
    require(bits.isNotEmpty())
    return buildString {

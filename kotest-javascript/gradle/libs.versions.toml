@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.1.0"
-kotest = "6.0.0.M2"
+kotlin = "2.1.20"
+kotest = "6.0.0-LOCAL"
 ktor = "3.0.1"
 
 [libraries]
@@ -12,3 +12,4 @@ ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
+kotest = { id = "io.kotest", version.ref = "kotest" }

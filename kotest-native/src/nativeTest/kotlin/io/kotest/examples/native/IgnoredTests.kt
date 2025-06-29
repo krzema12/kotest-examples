@@ -1,3 +1,5 @@
+package io.kotest.examples.native
+
 import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.matchers.shouldBe
 
