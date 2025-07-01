@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
+   alias(libs.plugins.kotest)
    id("com.google.devtools.ksp") version "2.2.0-2.0.2"
 }
 
@@ -18,16 +19,13 @@ kotlin {
    }
 
    linuxX64()
-   mingwX64()
-   macosX64()
-   iosX64()
+//   mingwX64()
+//   macosX64()
+//   iosX64()
 
    sourceSets {
-
       nativeTest {
          dependencies {
-            implementation(kotlin("test-common"))
-            implementation(kotlin("test-annotations-common"))
             implementation(libs.kotest.framework.engine)
          }
       }
@@ -36,7 +34,7 @@ kotlin {
 
 dependencies {
    add("kspLinuxX64Test", libs.kotest.framework.symbol.processor)
-   add("kspMingwX64Test", libs.kotest.framework.symbol.processor)
-   add("kspMacosX64Test", libs.kotest.framework.symbol.processor)
-   add("kspIosX64Test", libs.kotest.framework.symbol.processor)
+//   add("kspMingwX64Test", libs.kotest.framework.symbol.processor)
+//   add("kspMacosX64Test", libs.kotest.framework.symbol.processor)
+//   add("kspIosX64Test", libs.kotest.framework.symbol.processor)
 }
