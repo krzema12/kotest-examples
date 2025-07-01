@@ -1,12 +1,8 @@
-buildscript {
-   repositories {
-      mavenCentral()
-      mavenLocal()
-   }
-}
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
+   id("com.google.devtools.ksp") version "2.2.0-2.0.2"
 }
 
 repositories {
@@ -16,31 +12,15 @@ repositories {
 
 kotlin {
 
-   targets {
-      linuxX64 {
-         binaries {
-            executable()
-         }
-      }
-      linuxArm64()
-
-      mingwX64()
-
-      macosX64()
-      macosArm64()
-
-      tvosX64()
-      tvosArm64()
-      tvosSimulatorArm64()
-
-      watchosArm64()
-      watchosX64()
-      watchosSimulatorArm64()
-
-      iosX64()
-      iosArm64()
-      iosSimulatorArm64()
+   compilerOptions {
+      apiVersion = KotlinVersion.KOTLIN_2_2
+      languageVersion = KotlinVersion.KOTLIN_2_2
    }
+
+   linuxX64()
+   mingwX64()
+   macosX64()
+   iosX64()
 
    sourceSets {
 
@@ -52,4 +32,11 @@ kotlin {
          }
       }
    }
+}
+
+dependencies {
+   add("kspLinuxX64Test", libs.kotest.framework.symbol.processor)
+   add("kspMingwX64Test", libs.kotest.framework.symbol.processor)
+   add("kspMacosX64Test", libs.kotest.framework.symbol.processor)
+   add("kspIosX64Test", libs.kotest.framework.symbol.processor)
 }

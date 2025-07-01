@@ -1,4 +1,4 @@
-package io.kotest.examples.js.dog
+package io.kotest.examples.js
 
 import fetchDogUsingHttpClient
 import io.kotest.core.spec.style.FunSpec

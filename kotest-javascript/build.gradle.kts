@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
    alias(libs.plugins.kotest)
-   alias(libs.plugins.kotest.multiplatform)
+   id("com.google.devtools.ksp") version "2.2.0-2.0.2"
 }
 
 repositories {
@@ -11,14 +11,21 @@ repositories {
    mavenCentral()
 }
 
+kotest {
+   failOnNoTests = true
+}
+
 kotlin {
+
+   compilerOptions {
+      apiVersion = KotlinVersion.KOTLIN_2_2
+      languageVersion = KotlinVersion.KOTLIN_2_2
+   }
+
    js {
       nodejs()
    }
-   compilerOptions {
-      apiVersion = KotlinVersion.KOTLIN_2_1
-      languageVersion = KotlinVersion.KOTLIN_2_1
-   }
+
    sourceSets {
       commonTest {
          dependencies {
@@ -28,11 +35,15 @@ kotlin {
       }
       jsMain {
          dependencies {
-            kotlin("stdlib-js")
+            api(kotlin("stdlib-js"))
             implementation(libs.ktor.client.js)
             // needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
             implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.1.10")
          }
       }
    }
+}
+
+dependencies {
+   add("kspJsTest", libs.kotest.framework.symbol.processor)
 }

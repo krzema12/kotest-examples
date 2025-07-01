@@ -1,15 +1,15 @@
 [versions]
-kotlin = "2.1.20"
+kotlin = "2.2.0"
 kotest = "6.0.0-LOCAL"
 ktor = "3.0.1"
 
 [libraries]
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
+kotest-framework-symbol-processor = { module = "io.kotest:kotest-framework-symbol-processor", version.ref = "kotest" }
 
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
 kotest = { id = "io.kotest", version.ref = "kotest" }
