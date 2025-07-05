@@ -12,6 +12,14 @@ on:
 
 jobs:
   linux:
+    strategy:
+      matrix:
+        project: 
+          - kotest-allure
+          - kotest-javascript
+          - kotest-multiplatform
+          - kotest-native
+          - kotest-spring-webflux
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
@@ -26,7 +34,7 @@ jobs:
           java-version: '17'
 
       - name: Run tests
-        run: ./gradlew check
+        run: ./${{ matrix.project }}/gradlew check
 
       - name: Bundle the build report
         if: failure()
@@ -40,7 +48,15 @@ jobs:
           path: build-reports.zip
 
   macos:
-    runs-on: macos-14
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        project: 
+          - kotest-allure
+          - kotest-javascript
+          - kotest-multiplatform
+          - kotest-native
+          - kotest-spring-webflux
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
@@ -54,7 +70,7 @@ jobs:
            java-version: '17'
 
       - name: Run macos tests
-        run: ./gradlew macosX64Test
+        run: ./${{ matrix.project }}/gradlew macosX64Test
 
       - name: Bundle the build report
         if: failure()
@@ -69,6 +85,14 @@ jobs:
 
   windows:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        project: 
+          - kotest-allure
+          - kotest-javascript
+          - kotest-multiplatform
+          - kotest-native
+          - kotest-spring-webflux
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
@@ -82,7 +106,7 @@ jobs:
            java-version: '17'
 
       - name: Run tests
-        run: ./gradlew mingwX64Test
+        run: ./${{ matrix.project }}/gradlew mingwX64Test
 
       - name: Bundle the build report
         if: failure()
