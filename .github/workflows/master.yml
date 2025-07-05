@@ -34,7 +34,7 @@ jobs:
           java-version: '17'
 
       - name: Run tests
-        working-directory: ${{ matrix.project }}
+        working-directory: ./${{ matrix.project }}
         run: ./gradlew check
 
       - name: Bundle the build report
@@ -71,7 +71,7 @@ jobs:
            java-version: '17'
 
       - name: Run macos tests
-        working-directory: ${{ matrix.project }}
+        working-directory: ./${{ matrix.project }}
         run: ./gradlew check
 
       - name: Bundle the build report
@@ -108,7 +108,7 @@ jobs:
            java-version: '17'
 
       - name: Run tests
-        rorking-directory: ${{ matrix.project }}
+        working-directory: ./${{ matrix.project }}
         run: ./gradlew check
 
       - name: Bundle the build report
