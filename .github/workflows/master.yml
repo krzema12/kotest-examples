@@ -34,7 +34,8 @@ jobs:
           java-version: '17'
 
       - name: Run tests
-        run: ./${{ matrix.project }}/gradlew check
+        working-directory: ${{ matrix.project }}
+        run: ./gradlew check
 
       - name: Bundle the build report
         if: failure()
@@ -70,7 +71,8 @@ jobs:
            java-version: '17'
 
       - name: Run macos tests
-        run: ./${{ matrix.project }}/gradlew macosX64Test
+        working-directory: ${{ matrix.project }}
+        run: ./gradlew check
 
       - name: Bundle the build report
         if: failure()
@@ -106,7 +108,8 @@ jobs:
            java-version: '17'
 
       - name: Run tests
-        run: ./${{ matrix.project }}/gradlew mingwX64Test
+        rorking-directory: ${{ matrix.project }}
+        run: ./gradlew check
 
       - name: Bundle the build report
         if: failure()
