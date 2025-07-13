@@ -1,4 +1,4 @@
-package io.kotest.examples.js
+package io.kotest.examples.jvm
 
 import io.kotest.assertions.throwables.shouldThrowAny
 import io.kotest.core.spec.style.DescribeSpec

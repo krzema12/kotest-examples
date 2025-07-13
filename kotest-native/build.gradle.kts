@@ -11,6 +11,10 @@ repositories {
    mavenLocal()
 }
 
+kotest {
+   failOnNoTests = true
+}
+
 kotlin {
 
    compilerOptions {
