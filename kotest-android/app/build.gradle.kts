@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.kotestdemo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.kotestdemo"
@@ -27,6 +27,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -59,7 +60,7 @@ dependencies {
     testImplementation(libs.mockk.android)
     testImplementation(libs.mockk.agent)
 
-    testImplementation(project(":shared"))
+//    testImplementation(project(":shared"))
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

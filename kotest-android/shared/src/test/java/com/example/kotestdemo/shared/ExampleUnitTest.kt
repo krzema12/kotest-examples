@@ -1,14 +1,14 @@
 package com.example.kotestdemo.shared
 
 import io.kotest.core.spec.style.BehaviorSpec
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest1 : BaseSpec({
+class ExampleKotestUnitTest : BehaviorSpec({
 
    Given("This is a fake test") {
       When("fake test is called") {

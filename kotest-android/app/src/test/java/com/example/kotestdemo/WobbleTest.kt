@@ -1,9 +1,9 @@
 package com.example.kotestdemo
 
-import com.example.kotestdemo.shared.BaseSpec
+import io.kotest.core.spec.style.BehaviorSpec
 import org.junit.Assert.assertEquals
 
-class AppTest : BaseSpec({
+class WobbleTest : BehaviorSpec({
 
    Given("This is a fake test") {
       When("fake test is called") {

@@ -1,21 +1,20 @@
 package com.example.kotestdemo.shared
 
-import io.kotest.core.extensions.Extension
 import io.kotest.core.spec.IsolationMode
-import io.kotest.core.spec.Spec
 import io.kotest.core.spec.style.BehaviorSpec
-import io.mockk.clearAllMocks
-import io.mockk.unmockkAll
+
+//import io.mockk.clearAllMocks
+//import io.mockk.unmockkAll
 
 abstract class BaseSpec(
    body: BaseSpec.() -> Unit,
    val completeIsolation: Boolean = false,
 ) : BehaviorSpec() {
 
-   private val coroutineKotestRule = CoroutineKotestRule()
-   private val liveDataKotestRule = LiveDataKotestRule()
+//   private val coroutineKotestRule = CoroutineKotestRule()
+//   private val liveDataKotestRule = LiveDataKotestRule()
 
-   val mainCoroutineRule = coroutineKotestRule.mainCoroutineRule
+//   val mainCoroutineRule = coroutineKotestRule.mainCoroutineRule
 
    init {
       body()
@@ -24,12 +23,12 @@ abstract class BaseSpec(
    /**
     * Setup to add preparation and cleanups for Kotest
     */
-   override val extensions: List<Extension> = mutableListOf(coroutineKotestRule, liveDataKotestRule)
-
-   override suspend fun afterSpec(spec: Spec) {
-      clearAllMocks()
-      unmockkAll()
-   }
+//   override val extensions: List<Extension> = mutableListOf(coroutineKotestRule, liveDataKotestRule)
+//
+//   override suspend fun afterSpec(spec: Spec) {
+//      clearAllMocks()
+//      unmockkAll()
+//   }
 
    /**
     * Best to describe via example what IsolationMode does

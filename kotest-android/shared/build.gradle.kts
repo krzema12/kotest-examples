@@ -6,7 +6,7 @@ plugins {
 
 android {
    namespace = "io.kotest.examples.android.shared"
-   compileSdk = 34
+   compileSdk = 35
 
    defaultConfig {
       minSdk = 26
@@ -24,36 +24,38 @@ android {
          )
       }
    }
+
    compileOptions {
       sourceCompatibility = JavaVersion.VERSION_11
       targetCompatibility = JavaVersion.VERSION_11
    }
+
    kotlinOptions {
       jvmTarget = "11"
    }
 
    testOptions {
       unitTests.all {
-         it.useJUnitPlatform()
+         it.useJUnit()
       }
    }
 }
 
 dependencies {
-   implementation(libs.androidx.core.ktx)
-   implementation(libs.androidx.appcompat)
-   implementation(libs.material)
-   implementation(libs.junit)
+//   implementation(libs.androidx.core.ktx)
+//   implementation(libs.androidx.appcompat)
+//   implementation(libs.material)
+   testImplementation(libs.junit)
    implementation(libs.kotest.framework)
-   implementation(libs.mockk.android)
+//   implementation(libs.mockk.android)
+//
+//   api(libs.kotlin.coroutines.test)
 
-   api(libs.kotlin.coroutines.test)
-
-   testImplementation(libs.kotlin.reflect)
-   testImplementation(libs.kotest.framework)
-   testImplementation(libs.kotest.assertions)
-   testImplementation(libs.mockk.android)
-   testImplementation(libs.mockk.agent)
-
-   androidTestImplementation(libs.androidx.junit)
+//   testImplementation(libs.kotlin.reflect)
+//   testImplementation()
+//   testImplementation(libs.kotest.assertions)
+//   testImplementation(libs.mockk.android)
+//   testImplementation(libs.mockk.agent)
+//
+//   androidTestImplementation(libs.androidx.junit)
 }
