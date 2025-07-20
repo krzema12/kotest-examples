@@ -8,26 +8,7 @@ import org.junit.Assert.assertEquals
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleKotestUnitTest : BehaviorSpec({
-
-   Given("This is a fake test") {
-      When("fake test is called") {
-         Then("Pass the test") {
-            assertEquals(4, 2 + 2)
-         }
-      }
-   }
-
-   Given("This is another fake test") {
-      When("fake test is called") {
-         Then("Pass the test") {
-            assertEquals(4, 2 + 2)
-         }
-      }
-   }
-})
-
-class ExampleUnitTest2 : BehaviorSpec({
+class SharedModuleUnitTest : BehaviorSpec({
 
    Given("This is a fake test") {
       When("fake test is called") {

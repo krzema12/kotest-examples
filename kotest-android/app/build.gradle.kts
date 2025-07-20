@@ -1,67 +1,53 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.kotest)
+   alias(libs.plugins.android.application)
+   alias(libs.plugins.jetbrains.kotlin.android)
+   alias(libs.plugins.kotest)
 }
 
 android {
-    namespace = "com.example.kotestdemo"
-    compileSdk = 35
+   namespace = "com.example.kotestdemo"
+   compileSdk = 35
 
-    defaultConfig {
-        applicationId = "com.example.kotestdemo"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+   defaultConfig {
+      applicationId = "com.example.kotestdemo"
+      minSdk = 26
+      targetSdk = 34
+      versionCode = 1
+      versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+      testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+   }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
+   compileOptions {
+      sourceCompatibility = JavaVersion.VERSION_1_8
+      targetCompatibility = JavaVersion.VERSION_1_8
+   }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
-    testOptions {
-        unitTests.all {
-            it.useJUnitPlatform()
-        }
-    }
+   kotlin {
+      compilerOptions {
+         jvmTarget = JvmTarget.JVM_1_8
+      }
+   }
 }
 
 dependencies {
+   implementation(project(":shared"))
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+   implementation(libs.androidx.core.ktx)
+   implementation(libs.androidx.appcompat)
+   implementation(libs.material)
 
-    api(libs.kotlin.coroutines.test)
+   implementation(libs.junit)
 
-    implementation(libs.junit)
+   testImplementation(libs.junit)
+   testImplementation(libs.kotlin.reflect)
+   testImplementation(libs.kotest.framework)
+   testImplementation(libs.kotest.assertions)
+   testImplementation(libs.mockk.android)
+   testImplementation(libs.mockk.agent)
 
-    testImplementation(libs.junit)
-    testImplementation(libs.kotlin.reflect)
-    testImplementation(libs.kotest.framework)
-    testImplementation(libs.kotest.assertions)
-    testImplementation(libs.mockk.android)
-    testImplementation(libs.mockk.agent)
-
-//    testImplementation(project(":shared"))
-
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+   androidTestImplementation(libs.androidx.junit)
+   androidTestImplementation(libs.androidx.espresso.core)
 }

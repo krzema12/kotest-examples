@@ -42,20 +42,9 @@ android {
 }
 
 dependencies {
-//   implementation(libs.androidx.core.ktx)
-//   implementation(libs.androidx.appcompat)
-//   implementation(libs.material)
-   testImplementation(libs.junit)
+   implementation(libs.mockk.android)
+   implementation(libs.kotest.assertions)
    implementation(libs.kotest.framework)
-//   implementation(libs.mockk.android)
-//
-//   api(libs.kotlin.coroutines.test)
-
-//   testImplementation(libs.kotlin.reflect)
-//   testImplementation()
-//   testImplementation(libs.kotest.assertions)
-//   testImplementation(libs.mockk.android)
-//   testImplementation(libs.mockk.agent)
-//
-//   androidTestImplementation(libs.androidx.junit)
+   testImplementation(libs.junit)
+   androidTestImplementation(libs.androidx.junit)
 }
