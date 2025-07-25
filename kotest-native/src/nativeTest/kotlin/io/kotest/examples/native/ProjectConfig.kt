@@ -12,14 +12,3 @@ class ProjectConfig : AbstractProjectConfig() {
       println("GOODBYE!")
    }
 }
-
-object ProjectConfig2 : AbstractProjectConfig() {
-
-   override suspend fun beforeProject() {
-      println("HELLO!")
-   }
-
-   override suspend fun afterProject() {
-      println("GOODBYE!")
-   }
-}

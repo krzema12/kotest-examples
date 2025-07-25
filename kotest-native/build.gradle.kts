@@ -11,10 +11,6 @@ repositories {
    mavenLocal()
 }
 
-kotest {
-   failOnNoTests = true
-}
-
 kotlin {
 
    compilerOptions {
@@ -34,11 +30,4 @@ kotlin {
          }
       }
    }
-}
-
-dependencies {
-   add("kspLinuxX64Test", libs.kotest.framework.symbol.processor)
-//   add("kspMingwX64Test", libs.kotest.framework.symbol.processor)
-//   add("kspMacosX64Test", libs.kotest.framework.symbol.processor)
-//   add("kspIosX64Test", libs.kotest.framework.symbol.processor)
 }
