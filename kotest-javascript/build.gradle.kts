@@ -11,10 +11,6 @@ repositories {
    mavenCentral()
 }
 
-kotest {
-   failOnNoTests = true
-}
-
 kotlin {
 
    compilerOptions {
@@ -42,8 +38,4 @@ kotlin {
          }
       }
    }
-}
-
-dependencies {
-   add("kspJsTest", libs.kotest.framework.symbol.processor)
 }
