@@ -7,7 +7,7 @@ import io.kotest.matchers.string.shouldHaveLength
 // this test only runs for JS implementations
 class UUIDJsTest : FunSpec() {
     init {
-        test("uuids should have length 21") {
+        test("Javascript implementations should have length 21") {
             generateUUID().value.shouldHaveLength(21)
         }
     }
