@@ -21,15 +21,20 @@ kotlin {
       languageVersion = KotlinVersion.KOTLIN_2_2
    }
 
-   wasmJs {
+//   wasmJs {
+//      binaries.executable()
+//      nodejs()
+//   }
+
+   wasmWasi {
       binaries.executable()
       nodejs()
    }
 
    sourceSets {
-      wasmJsTest {
+      wasmWasiTest {
          dependencies {
-            implementation(libs.kotest.assertions.core)
+//            implementation(libs.kotest.assertions.core)
             implementation(libs.kotest.framework.engine)
          }
       }
