@@ -27,6 +27,7 @@ kotlin {
       nativeTest {
          dependencies {
             implementation(libs.kotest.framework.engine)
+            implementation(libs.kotest.assertions.core)
          }
       }
    }
