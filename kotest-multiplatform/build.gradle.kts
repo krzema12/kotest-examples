@@ -4,8 +4,9 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
+   alias(libs.plugins.androidLibrary)
    alias(libs.plugins.kotest)
-   id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+   alias(libs.plugins.ksp)
 }
 
 repositories {
@@ -81,5 +82,17 @@ kotlin {
             implementation(libs.kotest.assertions.core)
          }
       }
+   }
+}
+
+android {
+   namespace = "io.kotest.test.shared"
+   compileSdk = libs.versions.android.compileSdk.get().toInt()
+   compileOptions {
+      sourceCompatibility = JavaVersion.VERSION_11
+      targetCompatibility = JavaVersion.VERSION_11
+   }
+   defaultConfig {
+      minSdk = libs.versions.android.minSdk.get().toInt()
    }
 }
