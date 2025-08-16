@@ -9,11 +9,6 @@ plugins {
    alias(libs.plugins.ksp)
 }
 
-repositories {
-   mavenCentral()
-   mavenLocal()
-}
-
 kotlin {
 
    compilerOptions {
