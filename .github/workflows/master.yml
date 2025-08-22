@@ -17,10 +17,13 @@ jobs:
       matrix:
         project: 
           - kotest-allure
+          - kotest-android
           - kotest-javascript
+          - kotest-jvm
           - kotest-multiplatform
           - kotest-native
           - kotest-spring-webflux
+          - kotest-wasm
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
@@ -53,12 +56,15 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        project: 
+        project:
           - kotest-allure
+          - kotest-android
           - kotest-javascript
+          - kotest-jvm
           - kotest-multiplatform
           - kotest-native
           - kotest-spring-webflux
+          - kotest-wasm
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
@@ -90,12 +96,15 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        project: 
+        project:
           - kotest-allure
+          - kotest-android
           - kotest-javascript
+          - kotest-jvm
           - kotest-multiplatform
           - kotest-native
           - kotest-spring-webflux
+          - kotest-wasm
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
