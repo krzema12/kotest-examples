@@ -1,11 +1,12 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    kotlin("jvm") version "2.2.10"
    id("io.qameta.allure") version "2.10.0"
 }
 
-group = "com.example"
+group = "io.kotest.examples"
 version = "0.0.1-SNAPSHOT"
 
 java {
@@ -17,8 +18,8 @@ java {
 kotlin {
    compilerOptions {
       jvmTarget = JvmTarget.JVM_21
-      languageVersion = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2
-      apiVersion = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2
+      languageVersion = KotlinVersion.KOTLIN_2_2
+      apiVersion = KotlinVersion.KOTLIN_2_2
    }
 }
 

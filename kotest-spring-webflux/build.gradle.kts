@@ -9,10 +9,6 @@ plugins {
 
 apply(plugin = "io.spring.dependency-management")
 
-repositories {
-   mavenCentral()
-}
-
 group = "io.kotest.examples"
 version = "0.0.1-SNAPSHOT"
 
