@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    id("org.springframework.boot") version "3.5.5"
@@ -24,8 +25,8 @@ java {
 kotlin {
    compilerOptions {
       jvmTarget = JvmTarget.JVM_21
-      languageVersion = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2
-      apiVersion = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2
+      languageVersion = KotlinVersion.KOTLIN_2_2
+      apiVersion = KotlinVersion.KOTLIN_2_2
    }
 }
 
