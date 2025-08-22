@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    kotlin("jvm") version "2.2.10"
-   id("io.qameta.allure") version "2.10.0"
+   id("io.qameta.allure") version "2.12.0"
 }
 
 group = "io.kotest.examples"
@@ -32,12 +32,14 @@ dependencies {
 
 tasks.withType<Test> {
    useJUnitPlatform()
-   filter {
-      isFailOnNoMatchingTests = false
+   testLogging {
+      showExceptions = true
+      showStandardStreams = true
+      exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
    }
 }
 
 allure {
    adapter.autoconfigure.set(false)
-   version.set("2.13.1")
+   version.set("2.29.1")
 }
