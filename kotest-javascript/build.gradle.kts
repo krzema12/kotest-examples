@@ -17,6 +17,7 @@ repositories {
 kotlin {
 
    compilerOptions {
+      jvmTarget = JvmTarget.JVM_11
       apiVersion = KotlinVersion.KOTLIN_2_2
       languageVersion = KotlinVersion.KOTLIN_2_2
    }
