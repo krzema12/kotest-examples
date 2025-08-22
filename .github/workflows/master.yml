@@ -40,7 +40,6 @@ jobs:
       - name: Run tests
         working-directory: ./${{ matrix.project }}
         run: ./gradlew check
-        continue-on-error: true
 
       - name: Bundle the build report
         if: failure()
@@ -81,7 +80,6 @@ jobs:
       - name: Run tests
         working-directory: ./${{ matrix.project }}
         run: ./gradlew check
-        continue-on-error: true
 
       - name: Bundle the build report
         if: failure()
@@ -122,7 +120,6 @@ jobs:
       - name: Run tests
         working-directory: ./${{ matrix.project }}
         run: ./gradlew check
-        continue-on-error: true
 
       - name: Bundle the build report
         if: failure()
