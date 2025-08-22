@@ -13,14 +13,14 @@ group = "io.kotest.examples"
 version = "0.0.1-SNAPSHOT"
 
 java {
-   sourceCompatibility = JavaVersion.VERSION_21
-   targetCompatibility = JavaVersion.VERSION_21
+   sourceCompatibility = JavaVersion.VERSION_11
+   targetCompatibility = JavaVersion.VERSION_11
    withSourcesJar()
 }
 
 kotlin {
    compilerOptions {
-      jvmTarget = JvmTarget.JVM_21
+      jvmTarget = JvmTarget.JVM_11
       languageVersion = KotlinVersion.KOTLIN_2_2
       apiVersion = KotlinVersion.KOTLIN_2_2
    }
