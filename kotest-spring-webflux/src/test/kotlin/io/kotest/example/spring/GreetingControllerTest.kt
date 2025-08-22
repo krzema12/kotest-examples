@@ -1,7 +1,9 @@
 package io.kotest.example.spring
 
 import com.ninjasquad.springmockk.MockkBean
+import io.kotest.core.extensions.ApplyExtension
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.extensions.spring.SpringExtension
 import io.mockk.every
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.context.SpringBootTest
@@ -11,6 +13,7 @@ import reactor.core.publisher.Mono
 
 @SpringBootTest
 @AutoConfigureWebTestClient
+@ApplyExtension(SpringExtension::class)
 class GreetingControllerUnitTest(
    @MockkBean private val greetingService: GreetingService,
    private val webTestClient: WebTestClient

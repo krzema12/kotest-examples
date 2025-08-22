@@ -1,8 +1,7 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-   id("org.springframework.boot") version "2.7.18"
+   id("org.springframework.boot") version "3.5.5"
    alias(libs.plugins.kotlin.jvm)
    alias(libs.plugins.kotlin.plugin.spring)
 }
@@ -13,11 +12,22 @@ repositories {
    mavenCentral()
 }
 
-group = "com.example"
+group = "io.kotest.examples"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-extra["kotlinx-coroutines.version"] = "1.6.2"
+java {
+   sourceCompatibility = JavaVersion.VERSION_21
+   targetCompatibility = JavaVersion.VERSION_21
+   withSourcesJar()
+}
+
+kotlin {
+   compilerOptions {
+      jvmTarget = JvmTarget.JVM_21
+      languageVersion = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2
+      apiVersion = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2
+   }
+}
 
 dependencies {
    implementation(kotlin("reflect"))
@@ -36,16 +46,6 @@ dependencies {
    }
 }
 
-tasks.withType<Test> {
+tasks.test {
    useJUnitPlatform()
-   filter {
-      isFailOnNoMatchingTests = false
-   }
-}
-
-tasks.withType<KotlinCompile> {
-   kotlinOptions {
-      freeCompilerArgs = listOf("-Xjsr305=strict")
-      jvmTarget = "1.8"
-   }
 }
