@@ -10,6 +10,16 @@ repositories {
    mavenLocal()
 }
 
+java {
+   toolchain {
+      languageVersion = JavaLanguageVersion.of(17)
+   }
+}
+
+tasks.test {
+   useJUnitPlatform()
+}
+
 kotlin {
 
    compilerOptions {
@@ -21,6 +31,7 @@ kotlin {
       test {
          dependencies {
             implementation(libs.kotest.framework.engine)
+            implementation(libs.kotest.runner.junit5)
             implementation(libs.kotest.assertions.core)
          }
       }
